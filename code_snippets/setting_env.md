@@ -10,10 +10,10 @@ sudo apt-get update
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev libncursesw5-dev xz-utils tk-dev lzma liblzma-dev
 
 # Pyenv 설치
-curl https://pyenv.run | bash   
+curl https://pyenv.run | bash
 
 # Ubuntu 환경에서 Pyenv를 사용할 수 있도록 환경 설정
-echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc
+echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.bashrc  #환경변수 지정
 echo 'command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.bashrc
 echo 'eval "$(pyenv init -)"' >> ~/.bashrc
 source ~/.bashrc
@@ -25,22 +25,22 @@ pyenv install --list
 pyenv install 3.9.16
 
 # 설치된 파이썬 버전 확인
-pyenv versions 
+pyenv versions
 
-# Pipenv 설치 
-pip install pipenv 
+# Pipenv 설치
+pip install pipenv
 
 # Pipenv 명령어로 Pyenv로 설치한 파이썬 3.9.16 환경 생성
-pipenv --python 3.9.16 
+pipenv --python 3.9.16
 
 # Pipenv로 라이브러리 설치할 때 버전 정보를 미리 알아야 할 때
 pip index versions {LIBRARY_NAME}
 
 # Pipenv 환경에 pandas 2.0.0 을 설치한다면
-pipenv install pandas==2.0.0 
+pipenv install pandas==2.0.0
 
 # Pipenv 환경에 black 최신 버전을 설치하고, 개발 환경에서만 사용하도록 할 때
-pipenv install --dev black 
+pipenv install --dev black
 ```
 
 ## 설치 라이브러리 목록
